@@ -97,15 +97,15 @@
             android:fontFamily="sans-serif-medium"
             android:drawableEnd="@drawable/arrow"/>
 
-
-
-
-
-
-
-
-
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Member? Register Now"
+            android:textSize="14sp"
+            android:textColor="#6C63FF"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-light"
 
 
     </LinearLayout>
