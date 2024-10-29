@@ -86,6 +86,20 @@
                 android:paddingEnd="8dp"/>
         </LinearLayout>
 
+        <Button
+            android:id="@+id/nectButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Next"
+            android:backgroundTint="#6C63FF"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:drawableEnd="@drawable/arrow"/>
+
+
+
+
 
 
 
