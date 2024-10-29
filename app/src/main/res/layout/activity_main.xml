@@ -63,6 +63,30 @@
             android:background="#C4DEDADA"
             android:drawableEnd="@drawable/lock"
             android:layout_marginTop="16dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_vertical">
+            <CheckBox
+                android:id="@+id/rememberMeCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember Me"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/forgotPasswordTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password ? "
+                android:textColor="#6C63FF"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:paddingEnd="8dp"/>
+        </LinearLayout>
+
+
 
 
 
