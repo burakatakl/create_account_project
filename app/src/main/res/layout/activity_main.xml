@@ -23,13 +23,52 @@
             android:src="@drawable/img_enter" />
 
         <TextView
-            android:layout_width="214dp"
+            android:layout_width="181dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="sans-serif-medium"
             android:text="Welcome Back"
             android:textColor="@color/black"
             android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sign in to acces your account"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"/>
+        <EditText
+            android:id="@+id/emilEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Enter your Email"
+            android:inputType="textEmailAddress"
+            android:drawablePadding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="#C4DEDADA"
+            android:layout_marginTop="32dp"
+            android:drawableEnd="@drawable/mail"/>
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:drawablePadding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="#C4DEDADA"
+            android:drawableEnd="@drawable/lock"
+            android:layout_marginTop="16dp"/>
+
+
+
+
+
+
 
     </LinearLayout>
 
