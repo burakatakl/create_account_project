@@ -1,5 +1,5 @@
 <resources>
-    <string name="welcome_back">Welcome Back</string>
+    <string name="welcome_back">translatable="false" > Welcome Back </string>
     <string name="sign_name_massage" translatable="false">sign in to access your account</string>
     <string name="email_hint" translatable="false">Enter your Email</string>
     <string name="password_hint" translatable="false">Password</string>
@@ -7,6 +7,6 @@
     <string name="forgot_password" translatable="false">Forgot Password?</string>
     <string name="next" translatable="false">Next</string>
     <string name="new_member" translatable="false">New Member? Register Now</string>
-    <string name="welcome_back" translatable="false" />
+    <string name="forget_password" translatable="false">Forget Password? </string>
 
 </resources>
