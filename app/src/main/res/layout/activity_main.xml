@@ -35,80 +35,59 @@
             android:layout_marginTop="16dp"/>
 
         <TextView
+            android:id="@+id/signInMessageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sign in to acces your account"
+            android:text="@string/sign_name_massage"
             android:textSize="14sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:fontFamily="sans-serif-light"/>
-        <EditText
-            android:id="@+id/emilEditText"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Enter your Email"
-            android:inputType="textEmailAddress"
-            android:drawablePadding="8dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="#C4DEDADA"
+            android:textColor="@color/gray"
+            android:fontFamily="sans-serif-light"
+            app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:drawableEnd="@drawable/mail"/>
-        <EditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:drawablePadding="8dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="#C4DEDADA"
-            android:drawableEnd="@drawable/lock"
-            android:layout_marginTop="16dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="center_vertical">
-            <CheckBox
-                android:id="@+id/rememberMeCheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Remember Me"
-                android:textColor="@color/black"/>
-            <TextView
-                android:id="@+id/forgotPasswordTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Forgot Password ? "
-                android:textColor="#6C63FF"
-                android:layout_gravity="end"
-                android:layout_weight="1"
-                android:paddingEnd="8dp"/>
-        </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@id/signInMessageTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/nectButton"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="Next"
-            android:backgroundTint="#6C63FF"
-            android:textColor="@color/white"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_hint"
+                    android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-medium"
-            android:drawableEnd="@drawable/arrow"/>
+            app:layout_constraintTop_toBottomOf="@id/emailInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Member? Register Now"
-            android:textSize="14sp"
-            android:textColor="#6C63FF"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            android:fontFamily="sans-serif-light"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+
+
 
 
 
