@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">create_account_project</string>
+    <string name="welcome back">Welcome Back</string>
+    <string name="sign_name_massage">sign in to access your account</string>
+    <string name="email_hint">Enter your Email</string>
+    <string name="password_hint">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="next">Next</string>
+    <string name="new_member">New Member? Register Now</string>
+
 </resources>
