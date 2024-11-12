@@ -46,9 +46,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creatingAccountView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/creatingAccountView">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameEditText"
@@ -117,16 +117,17 @@
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/rememberMeCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="By checking the box you agree to our Terms and Conditions."
+        android:text="@string/By_checking_the_box_you_agree_to_our_Terms_and_Conditions"
         android:textColor="@color/black"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="9sp"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordInputLayout" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"
@@ -137,20 +138,19 @@
         app:backgroundTint="@color/purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/rememberMeCheckBox" />
 
     <TextView
         android:id="@+id/rememberLoginView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
         android:text="Already a member? Log In"
         android:textColor="@color/black"
         android:textSize="12sp"
-        android:fontFamily="sans-serif-light"
-        app:layout_constraintTop_toBottomOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/nextButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
