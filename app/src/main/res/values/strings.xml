@@ -8,5 +8,12 @@
     <string name="next" translatable="false">Next</string>
     <string name="new_member" translatable="false">New Member? Register Now</string>
     <string name="forget_password" translatable="false">Forget Password? </string>
+    <string name="full_name" translatable="false">Full Name</string>
+    <string name="valid_email" translatable="false">Valid email</string>
+    <string name="phone_number" translatable="false">Phone Number</string>
+    <string name="get_started" translatable="false" >Get Started</string>
+    <string name="by_creating_a_free_account" translatable="false">by creating a free account</string>
+    <string name="strong_password" translatable="false">Strong Password</string>
+
 
 </resources>
