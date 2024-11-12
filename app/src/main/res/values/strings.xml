@@ -1,5 +1,5 @@
 <resources>
-    <string name="welcome_back">translatable="false" > Welcome Back </string>
+    <string name="welcome_back"> Welcome Back </string>
     <string name="sign_name_massage" translatable="false">sign in to access your account</string>
     <string name="email_hint" translatable="false">Enter your Email</string>
     <string name="password_hint" translatable="false">Password</string>
