@@ -1,6 +1,6 @@
 package com.example.create_account_project
 
-import android.annotation.SuppressLint
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -11,7 +11,6 @@ import android.content.Intent
 import android.view.View
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,12 +18,12 @@ class MainActivity : AppCompatActivity() {
         val emailField = findViewById<EditText>(R.id.emailEditText)
         val passwordField = findViewById<EditText>(R.id.passwordEditText)
         val nextButton = findViewById<Button>(R.id.nextButton)
-        val CheckBox = findViewById<CheckBox>(R.id.rememberMeCheckBox)
+        val CheckedBox = findViewById<CheckBox>(R.id.rememberMeCheckBox)
 
         nextButton.setOnClickListener {
             val email = emailField.text.toString().trim()
             val password = passwordField.text.toString().trim()
-            val rememberMe = CheckBox.isChecked
+            val rememberMe = CheckedBox.isChecked
         }
         val loginButton = findViewById<View>(R.id.registernow)
         loginButton.setOnClickListener {

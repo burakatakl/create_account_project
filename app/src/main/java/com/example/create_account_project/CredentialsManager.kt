@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.create_account_project
 
 class CredentialsManager {
 
@@ -21,6 +21,10 @@ class CredentialsManager {
     fun validateCredentials(email: String, password: String, isCheckboxChecked: Boolean): Boolean {
         return isEmailValid(email) && isValidPassword(password) && isCheckboxChecked
     }
+    fun isValidFullName(fullName: String) : Boolean{
+        return fullName.isNotEmpty()
+    }
+
 
 
 }

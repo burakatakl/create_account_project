@@ -1,6 +1,8 @@
 package com.example.create_account_project
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,13 +29,19 @@ class MainActivity2 : AppCompatActivity() {
         val conditionCheckBox = findViewById<CheckBox>(R.id.rememberMeCheckBox)
         val nextButton = findViewById<Button>(R.id.nextButton)
 
-        nextButton.setOnClickListener{
+        nextButton.setOnClickListener {
             val fullName = fullNameEditText.text.toString().trim()
             val email = emailEdit.text.toString().trim()
             val phoneNumber = phoneNumberEdit.text.toString().trim()
             val password = passwdEdit.text.toString().trim()
             val terms = conditionCheckBox.isChecked
         }
-
+        val loginButton = findViewById<View>(R.id.rememberLoginView)
+        loginButton.setOnClickListener {
+            val goToReg = Intent(this, MainActivity::class.java)
+            startActivity(goToReg)
+        }
     }
+
+
 }
