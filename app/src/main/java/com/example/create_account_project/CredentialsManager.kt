@@ -21,4 +21,6 @@ class CredentialsManager {
     fun validateCredentials(email: String, password: String, isCheckboxChecked: Boolean): Boolean {
         return isEmailValid(email) && isValidPassword(password) && isCheckboxChecked
     }
+
+
 }
