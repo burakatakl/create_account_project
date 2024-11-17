@@ -17,7 +17,14 @@ class CredentialsManagerTest {
         assertTrue(credentialsManager.isValidPassword("burak123"))
         assertFalse(credentialsManager.isValidPassword("no"))
     }
+    @Test
+    fun testCredentials(){
+        assertTrue(credentialsManager.validateCredentials("burak@test.com","burak123",true))
+        assertFalse(credentialsManager.validateCredentials("false_email","burak123",true))
+        assertFalse(credentialsManager.validateCredentials("burak@test.com","no",true))
 
+        assertFalse(credentialsManager.validateCredentials("burak@test.com","burak123",false))
+    }
 
 
 }
