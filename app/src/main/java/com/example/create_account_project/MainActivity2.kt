@@ -3,15 +3,12 @@ package com.example.create_account_project
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
-import com.example.myapplication.CredentialsManager
+
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -36,6 +33,8 @@ class MainActivity2 : AppCompatActivity() {
             val password = passwdEdit.text.toString().trim()
             val terms = conditionCheckBox.isChecked
         }
+
+
         val loginButton = findViewById<View>(R.id.rememberLoginView)
         loginButton.setOnClickListener {
             val goToReg = Intent(this, MainActivity::class.java)

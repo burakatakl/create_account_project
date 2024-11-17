@@ -21,8 +21,21 @@ class CredentialsManager {
     fun validateCredentials(email: String, password: String, isCheckboxChecked: Boolean): Boolean {
         return isEmailValid(email) && isValidPassword(password) && isCheckboxChecked
     }
-    fun isValidFullName(fullName: String) : Boolean{
+    fun validFullName(fullName: String) : Boolean{
         return fullName.isNotEmpty()
+    }
+    fun validPhoneNumber(phoneNumber: String): Boolean{
+        return phoneNumber.isNotEmpty()
+    }
+    fun termsAccepted(isCheck: Boolean): Boolean{
+        return isCheck
+    }
+    fun ValidateCredentialsForSignUp(
+        fullName: String, email: String, phoneNumber: String,
+        password: String, isCheck: Boolean
+    ) : Boolean{
+        return validFullName(fullName) && isEmailValid(email) && isValidPassword(password) &&
+                validPhoneNumber(phoneNumber) && termsAccepted(isCheck)
     }
 
 
