@@ -10,22 +10,31 @@ class CredentialsManager {
             "[a-zA-Z0-9][0-zA-Z0-9\\-]{0,25}" +
             ")+").toRegex()
 
-    fun isEmailValid(email: String): Boolean {
+    fun emailValid(email: String): Boolean {
         return email.matches(emailPattern)
     }
 
-    fun isValidPassword(password: String): Boolean {
+    fun validPassword(password: String): Boolean {
         return password.length >= 8
     }
 
     fun validateCredentials(email: String, password: String, isCheckboxChecked: Boolean): Boolean {
-        return isEmailValid(email) && isValidPassword(password) && isCheckboxChecked
+        return emailValid(email) && validPassword(password) && isCheckboxChecked
     }
-    fun validFullName(fullName: String) : Boolean{
+
+    fun validFullName(fullName: String): Boolean {
         return fullName.isNotEmpty()
     }
-    fun validPhoneNumber(phoneNumber: String): Boolean{
-        return phoneNumber.isNotEmpty()
+
+    fun isHardcodedCredentials(email: String, password: String): Boolean {
+        val hardcodedEmail = "test@te.st"
+        val hardcodedPassword = "1234"
+        return email == hardcodedEmail && password == hardcodedPassword
+    }
+
+    fun isValidPhoneNumber(phoneNumber: String): Boolean {
+        val phonePattern = "^[0-9]{9,}$".toRegex()
+        return phoneNumber.matches(phonePattern)
     }
     fun termsAccepted(isCheck: Boolean): Boolean{
         return isCheck
@@ -40,8 +49,8 @@ class CredentialsManager {
         fullName: String, email: String, phoneNumber: String,
         password: String, isCheck: Boolean
     ) : Boolean{
-        return validFullName(fullName) && isEmailValid(email) && isValidPassword(password) &&
-                validPhoneNumber(phoneNumber) && termsAccepted(isCheck)
+        return validFullName(fullName) && emailValid(email) && validPassword(password) &&
+                isValidPhoneNumber(phoneNumber) && termsAccepted(isCheck)
     }
 
 

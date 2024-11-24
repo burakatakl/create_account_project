@@ -9,14 +9,14 @@ class CredentialsManagerTest {
 
     @Test
     fun testValidEmail() {
-        assertTrue(credentialsManager.isEmailValid("example@email.com"))
-        assertFalse(credentialsManager.isEmailValid("false_email"))
+        assertTrue(credentialsManager.emailValid("example@email.com"))
+        assertFalse(credentialsManager.emailValid("false_email"))
     }
 
     @Test
     fun testPassword() {
-        assertTrue(credentialsManager.isValidPassword("burak123"))
-        assertFalse(credentialsManager.isValidPassword("no"))
+        assertTrue(credentialsManager.validPassword("burak123"))
+        assertFalse(credentialsManager.validPassword("no"))
     }
 
     @Test
@@ -42,9 +42,9 @@ class CredentialsManagerTest {
 
     @Test
     fun testPhoneNumber() {
-        assertTrue(credentialsManager.validPhoneNumber("4643732829"))
-        assertFalse(credentialsManager.validPhoneNumber("987"))
-        assertFalse(credentialsManager.validPhoneNumber(" "))
+        assertTrue(credentialsManager.isValidPhoneNumber("4643732829"))
+        assertFalse(credentialsManager.isValidPhoneNumber("987"))
+        assertFalse(credentialsManager.isValidPhoneNumber(" "))
     }
 
     @Test
