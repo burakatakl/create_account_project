@@ -80,6 +80,14 @@ class CredentialsManagerTest {
             )
         )
     }
+    @Test
+    fun testMistakeCredentials(){
+        val valueEmail = "burak@tt.omc"
+        val valuePasswords = "b123"
+        assertTrue(valueEmail == "burak@tt.omc" && valuePasswords == "b123")
+        assertFalse(valueEmail =="false@tt.omc" && valuePasswords == "b123")
+        assertFalse(valueEmail=="burak@tt.omc"&& valuePasswords =="false")
+    }
 
 
 }
