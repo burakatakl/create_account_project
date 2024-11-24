@@ -33,5 +33,53 @@ class CredentialsManagerTest {
         assertFalse(credentialsManager.termsAccepted(false))
     }
 
+    @Test
+    fun testFullName() {
+        assertTrue(credentialsManager.validFullName("Burak Atakli"))
+        assertFalse(credentialsManager.validFullName(" "))
+        assertTrue(credentialsManager.validFullName("Burak"))
+    }
+
+    @Test
+    fun testPhoneNumber() {
+        assertTrue(credentialsManager.validPhoneNumber("4643732829"))
+        assertFalse(credentialsManager.validPhoneNumber("987"))
+        assertFalse(credentialsManager.validPhoneNumber(" "))
+    }
+
+    @Test
+    fun testCredentialsSignUpPage() {
+        assertTrue(
+            credentialsManager.validateCredentialsForSignUp(
+                "Burak Atakli", "burak@test.com", "4643732829", "burak123", true
+            )
+        )
+        assertFalse(
+            credentialsManager.validateCredentialsForSignUp(
+                "", "burak@test.com", "4643732829", "burak123", true
+            )
+        )
+        assertFalse(
+            credentialsManager.validateCredentialsForSignUp(
+                "Burak Atakli", "burak@test.com", "987", "burak123", true
+            )
+        )
+        assertFalse(
+            credentialsManager.validateCredentialsForSignUp(
+                "Burak Atakli","burak@test.com","4643732829","no",true
+            )
+        )
+        assertFalse(
+            credentialsManager.validateCredentialsForSignUp(
+                "Burak Atakli","false_email","4643732829","burak123",true
+            )
+        )
+        assertFalse(
+            credentialsManager.validateCredentialsForSignUp(
+                "Burak Atakli","burak@test.com","4643732829","burak123",false
+            )
+        )
+    }
+
 
 }

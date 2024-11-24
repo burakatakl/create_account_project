@@ -30,7 +30,8 @@ class CredentialsManager {
     fun termsAccepted(isCheck: Boolean): Boolean{
         return isCheck
     }
-    fun ValidateCredentialsForSignUp(
+
+    fun validateCredentialsForSignUp(
         fullName: String, email: String, phoneNumber: String,
         password: String, isCheck: Boolean
     ) : Boolean{
