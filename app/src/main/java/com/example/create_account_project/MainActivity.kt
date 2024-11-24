@@ -1,16 +1,15 @@
 package com.example.create_account_project
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
-import android.widget.Toast
-import android.content.Intent
-import android.view.View
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
     private val credentialsManager: CredentialsManager = CredentialsManager()
@@ -39,15 +38,35 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setError(field: EditText, errorResId: Int) {
-        field.error = getString(errorResId)
-    }
 
     private fun nextButtonClick() {
-
-
-
+        val email = emailFile.text.toString().trim()
+        val password = passwordFile.text.toString().trim()
+        val rememberMe = rememberCheckBox.isChecked
+        if (credentialsManager.isMistakeCredentials(email, password)) {
+            navigateToMainActivity()
+            return
+        }
     }
 
+    private fun setError(layout: TextInputEditText, message: String) {
+        layout.error = message
+    }
+
+    private fun clearError(layout: TextInputEditText, message: String) {
+        layout.error = null
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun navigateToMainActivity() {
+        clearError(emailLayout, message = "error")
+        clearError(passwordLayout, message = "error")
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }
+
 
