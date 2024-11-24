@@ -2,11 +2,9 @@ package com.example.create_account_project
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
@@ -49,8 +47,50 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    private fun handleNextButtonClick(){
+    private fun handleNextButtonClick() {
+        val fullName = fullNameFile.text.toString().trim()
+        val email = emailFile.text.toString().trim()
+        val password = passwordFile.toString().trim()
+        val phone = phoneFile.toString().trim()
+        val terms = checkBox.isChecked
+        clearError(fullNameLayout, message = "error")
+        clearError(emailLayout, message = "error")
+        clearError(phoneLayout, message = "error")
+        clearError(passwordLayout, message = "error")
 
+        if (fullName.isNotEmpty()) {
+            setError(fullNameLayout, message = "error")
+            return
+        }
+        if (email.isEmpty() || !credentialsManager.emailValid(email)) {
+            setError(emailLayout, message = "error")
+            return
+        }
+        if (phone.isEmpty() || !credentialsManager.isValidPhoneNumber(phone)) {
+            setError(phoneLayout, message = "error")
+            return
+        }
+        if (password.isEmpty() || !credentialsManager.validPassword(password)) {
+            setError(passwordLayout, message = "error")
+            return
+        }
+        if (!terms) {
+            showToast("check it ")
+            return
+        }
+
+    }
+
+    private fun setError(layout: TextInputEditText, message: String) {
+        layout.error = message
+    }
+
+    private fun clearError(layout: TextInputEditText, message: String) {
+        layout.error = null
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
 
