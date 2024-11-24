@@ -30,6 +30,11 @@ class CredentialsManager {
     fun termsAccepted(isCheck: Boolean): Boolean{
         return isCheck
     }
+    fun isMistakeCredentials(email: String, password: String):Boolean{
+        val mistakeEmail = "burak@tt.omc"
+        val mistakePassword = "b123"
+        return email == mistakeEmail && password == mistakePassword
+    }
 
     fun validateCredentialsForSignUp(
         fullName: String, email: String, phoneNumber: String,
