@@ -1,7 +1,7 @@
 package com.example.create_account_project
 
 class CredentialsManager {
-    
+    //test
 
     private val emailPattern = ("[a-zA-Z0-9\\+\\%\\-\\+]{1,256}" +
             "\\@" +
