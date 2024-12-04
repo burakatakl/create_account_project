@@ -6,6 +6,7 @@
     tools:context=".FragmentB">
 
 
+
     <TextView
         android:id="@+id/textViewB"
         android:layout_width="match_parent"

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
+
 class FragmentB : Fragment() {
 
     override fun onCreateView(
