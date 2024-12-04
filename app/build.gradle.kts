@@ -1,3 +1,7 @@
+
+
+val True: Boolean = false
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -15,6 +19,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        viewBinding{
+            enable = True
+        }
     }
 
     buildTypes {
@@ -36,14 +43,14 @@ android {
 }
 
 dependencies {
-
+    val fragment_version = "1.8.5"
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation("com.google.android.material:material:1.4.0")
-
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
     implementation(libs.junit.junit)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
