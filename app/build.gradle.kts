@@ -43,6 +43,7 @@ dependencies {
     implementation("com.google.android.material:material:1.4.0")
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation((libs.androidx.fragments))
     implementation(libs.junit.junit)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
