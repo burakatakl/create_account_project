@@ -16,6 +16,8 @@
     <string name="By_checking_the_box_you_agree_to_our_Terms_and_Conditions" translatable="false">By checking the box you agree to our Terms and Conditions.</string>
     <string name="new_member" translatable="false">New member?</string>
     <string name="register_now" translatable="false">Register now</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
