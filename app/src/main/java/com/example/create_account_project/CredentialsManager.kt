@@ -19,8 +19,8 @@ class CredentialsManager {
         return password.length >= 8
     }
 
-    fun validateCredentials(email: String, password: String, isCheckboxChecked: Boolean): Boolean {
-        return emailValid(email) && validPassword(password) && isCheckboxChecked
+    fun validateCredentials(email: String, password: String): Boolean {
+        return emailValid(email) && validPassword(password)
     }
 
     fun validFullName(fullName: String): Boolean {

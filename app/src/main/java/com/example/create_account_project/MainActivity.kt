@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private val emailLayout: TextInputEditText
         get() = findViewById(R.id.emailInputLayout)
     private val passwordFile: TextInputEditText
-        get() = findViewById(R.id.passwordEditText)
+        get() = findViewById(R.id.passwordEditText) 
     private val passwordLayout: TextInputEditText
         get() = findViewById(R.id.passwordInputLayout)
     private val nextButton: Button

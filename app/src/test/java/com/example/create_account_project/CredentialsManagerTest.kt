@@ -21,11 +21,11 @@ class CredentialsManagerTest {
 
     @Test
     fun testCredentials() {
-        assertTrue(credentialsManager.validateCredentials("burak@test.com", "burak123", true))
-        assertFalse(credentialsManager.validateCredentials("false_email", "burak123", true))
-        assertFalse(credentialsManager.validateCredentials("burak@test.com", "no", true))
+        assertTrue(credentialsManager.validateCredentials("burak@test.com", "burak123"))
+        assertFalse(credentialsManager.validateCredentials("false_email", "burak123"))
+        assertFalse(credentialsManager.validateCredentials("burak@test.com", "no"))
 
-        assertFalse(credentialsManager.validateCredentials("burak@test.com", "burak123", false))
+        assertFalse(credentialsManager.validateCredentials("burak@test.com", "burak123"))
     }
 
     @Test
