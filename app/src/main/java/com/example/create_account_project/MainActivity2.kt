@@ -1,50 +1,57 @@
 package com.example.create_account_project
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputEditText
 
 
-class MainActivity2 : AppCompatActivity() {
+class MainActivity2 : Fragment() {
 
     private val credentialsManager: CredentialsManager = CredentialsManager()
 
-    private val fullNameFile: TextInputEditText
-        get() = findViewById(R.id.nameEditText)
-    private val fullNameLayout: TextInputEditText
-        get() = findViewById(R.id.nameInput)
-    private val phoneFile: TextInputEditText
-        get() = findViewById(R.id.phoneNumberEdit)
-    private val phoneLayout: TextInputEditText
-        get() = findViewById(R.id.phoneNumberInput)
-    private val emailFile: TextInputEditText
-        get() = findViewById(R.id.emailEditText)
-    private val emailLayout: TextInputEditText
-        get() = findViewById(R.id.emailInputLayout)
-    private val passwordFile: TextInputEditText
-        get() = findViewById(R.id.passwordEditText)
-    private val passwordLayout: TextInputEditText
-        get() = findViewById(R.id.passwordInputLayout)
-    private val checkBox: CheckBox
-        get() = findViewById(R.id.rememberMeCheckBox)
-    private val nextButton: Button
-        get() = findViewById(R.id.nextButton)
+    private lateinit var fullNameFile:TextInputEditText
+    private lateinit var fullNameLayout:TextInputEditText
+    private lateinit var emailFile:TextInputEditText
+    private lateinit var emailLayout:TextInputEditText
+    private lateinit var passwordFile:TextInputEditText
+    private lateinit var passwordLayout:TextInputEditText
+    private lateinit var phoneFile:TextInputEditText
+    private lateinit var phoneLayout:TextInputEditText
+    private lateinit var checkBox:CheckBox
+    private lateinit var nextButton:Button
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+    @SuppressLint("MissingInflatedId")
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.activity_main2,container,false)
+        fullNameFile = view.findViewById(R.id.nameInput)
+        fullNameLayout = view.findViewById(R.id.nameEditText)
+        emailFile = view.findViewById(R.id.emailInputLayout)
+        emailLayout = view.findViewById(R.id.emailEditText)
+        passwordFile = view.findViewById(R.id.passwordInputLayout)
+        passwordLayout = view.findViewById(R.id.passwordEditText)
+        phoneFile = view.findViewById(R.id.phoneNumberInput)
+        phoneLayout = view.findViewById(R.id.phoneNumberEdit)
+        checkBox = view.findViewById(R.id.rememberMeCheckBox)
+        nextButton = view.findViewById(R.id.nextButton)
+        nextButton.setOnClickListener{handleNextButtonClick()}
+        view.findViewById<TextView>(R.id.registernow).setOnClickListener(){
 
-        nextButton.setOnClickListener { handleNextButtonClick() }
-        val loginButton = findViewById<TextView>(R.id.rememberLoginView)
-        loginButton.setOnClickListener {
-            val goToCreateAccount = Intent(this, MainActivity::class.java)
-            startActivity(goToCreateAccount)
         }
+        return view
     }
 
     private fun handleNextButtonClick() {
@@ -74,10 +81,6 @@ class MainActivity2 : AppCompatActivity() {
             setError(passwordLayout, message = "error")
             return
         }
-        if (!terms) {
-            showToast("check it ")
-            return
-        }
 
     }
 
@@ -89,10 +92,10 @@ class MainActivity2 : AppCompatActivity() {
         layout.error = null
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    private fun showToast(messageResId: Int){
+        Toast.makeText(requireContext(),getString(messageResId),Toast.LENGTH_SHORT).show()
     }
-
+    
 
 }
 
