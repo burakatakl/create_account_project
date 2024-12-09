@@ -1,50 +1,49 @@
 package com.example.create_account_project
 
-
-import android.content.Intent
+import  android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.os.Bundle
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import  androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 
-class MainActivity : AppCompatActivity() {
+class MainActivity(credentialsManager: CredentialsManager) : Fragment() {
     private val credentialsManager: CredentialsManager = CredentialsManager()
-    private val emailFile: TextInputEditText
-        get() = findViewById(R.id.emailEditText)
-    private val emailLayout: TextInputEditText
-        get() = findViewById(R.id.emailInputLayout)
-    private val passwordFile: TextInputEditText
-        get() = findViewById(R.id.passwordEditText) 
-    private val passwordLayout: TextInputEditText
-        get() = findViewById(R.id.passwordInputLayout)
-    private val nextButton: Button
-        get() = findViewById(R.id.nextButton)
-    private val rememberCheckBox: CheckBox
-        get() = findViewById(R.id.rememberMeCheckBox)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    private lateinit var emailFile: TextInputEditText
+    private lateinit var emailLayout: TextInputEditText
+    private lateinit var passwordFile: TextInputEditText
+    private lateinit var passwordLayout: TextInputEditText
+    private lateinit var nextButton: Button
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.activity_main, container, false)
+
+        emailFile = view.findViewById(R.id.emailEditText)
+        emailLayout = view.findViewById(R.id.emailInputLayout)
+        passwordFile = view.findViewById(R.id.passwordEditText)
+        passwordLayout = view.findViewById(R.id.passwordInputLayout)
+        nextButton = view.findViewById(R.id.nextButton)
 
         nextButton.setOnClickListener { nextButtonClick() }
-        val loginButton = findViewById<TextView>(R.id.registernow)
-        loginButton.setOnClickListener {
-            val goToReg = Intent(this, MainActivity2::class.java)
-            startActivity(goToReg)
+
+        view.findViewById<TextView>(R.id.registernow).setOnClickListener {
+            navigateToMainActivity()
         }
+        return view
     }
 
 
     private fun nextButtonClick() {
         val email = emailFile.text.toString().trim()
         val password = passwordFile.text.toString().trim()
-        val rememberMe = rememberCheckBox.isChecked
         if (credentialsManager.isMistakeCredentials(email, password)) {
-            navigateToMainActivity()
+            navigateMain()
             return
         }
     }
@@ -57,16 +56,34 @@ class MainActivity : AppCompatActivity() {
         layout.error = null
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
 
     private fun navigateToMainActivity() {
         clearError(emailLayout, message = "error")
         clearError(passwordLayout, message = "error")
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+
     }
+    private fun showToast(messageResId: Int){
+        Toast.makeText(requireContext(),getString(messageResId),Toast.LENGTH_SHORT).show()
+    }
+    private fun navigateMain(){
+        showToast(R.string.sign_name_massage)
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container,MainActivity(credentialsManager))
+            .commit()
+    }
+    private fun navigateMain2(){
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container,MainActivity2())
+            .addToBackStack(null)
+            .commit()
+    }
+
+
 }
+
+
+
+
+
 
 
