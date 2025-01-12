@@ -1,7 +1,15 @@
 package com.example.create_account_project
+import android.content.Context
+import android.content.pm.PackageInstaller.PreapprovalDetails
 
 class CredentialsManager {
-    //test
+
+    private val PREFS_NAME = "user_prefs"
+    private  val KEY_IS_LOGGED_IN = "is_logged_in"
+    private  val KEY_EMAIL = "email"
+    private  val KEY_PASSWORD = "password"
+
+
 
     private val emailPattern = ("[a-zA-Z0-9\\+\\%\\-\\+]{1,256}" +
             "\\@" +
@@ -53,8 +61,14 @@ class CredentialsManager {
         return validFullName(fullName) && emailValid(email) && validPassword(password) &&
                 isValidPhoneNumber(phoneNumber) && termsAccepted(isCheck)
     }
+    private fun getSharedPreferences(context: Context) =
+        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-
+    fun setLoggedIn(context: Context, isLoggedIn: Boolean) {
+        getSharedPreferences(context).edit()
+            .putBoolean(KEY_IS_LOGGED_IN, isLoggedIn)
+            .apply()
+    }
 
 
 }

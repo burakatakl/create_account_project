@@ -11,11 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Create_account_project"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity3"
+       <activity
+            android:name=".recipeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".RecipeDetail"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
