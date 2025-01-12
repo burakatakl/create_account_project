@@ -43,7 +43,7 @@ class MainActivity(credentialsManager: CredentialsManager) : Fragment() {
         val email = emailFile.text.toString().trim()
         val password = passwordFile.text.toString().trim()
         if (credentialsManager.isMistakeCredentials(email, password)) {
-            navigateMain()
+
             return
         }
     }
@@ -65,18 +65,7 @@ class MainActivity(credentialsManager: CredentialsManager) : Fragment() {
     private fun showToast(messageResId: Int){
         Toast.makeText(requireContext(),getString(messageResId),Toast.LENGTH_SHORT).show()
     }
-    private fun navigateMain(){
-        showToast(R.string.sign_name_massage)
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container,MainActivity(credentialsManager))
-            .commit()
-    }
-    private fun navigateMain2(){
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container,MainActivity2())
-            .addToBackStack(null)
-            .commit()
-    }
+
 
 
 }
